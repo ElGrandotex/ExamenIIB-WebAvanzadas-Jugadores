@@ -1,0 +1,43 @@
+<div class="text-center">
+  <h2>Jugadores LDU</h2>
+  <h6>José Verdezoto</h6>
+  <p>Examen IIB</p>
+</div>
+
+<div class="p-4">
+  <table mat-table [dataSource]="jugadores" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let jugador">{{jugador.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef>Nombre</th>
+      <td mat-cell *matCellDef="let jugador">{{jugador.nombre}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="apellido">
+      <th mat-header-cell *matHeaderCellDef>Apellido</th>
+      <td mat-cell *matCellDef="let jugador">{{jugador.apellido}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="posicion">
+      <th mat-header-cell *matHeaderCellDef>Posicion</th>
+      <td mat-cell *matCellDef="let jugador">{{jugador.posicion}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="numero">
+      <th mat-header-cell *matHeaderCellDef>Dorsal</th>
+      <td mat-cell *matCellDef="let jugador">{{jugador.numero}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="nacionalidad">
+      <th mat-header-cell *matHeaderCellDef>Nacionalidad</th>
+      <td mat-cell *matCellDef="let jugador">{{jugador.nacionalidad}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
